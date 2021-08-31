@@ -2,16 +2,17 @@
 Description: 
 Author: Tjg
 Date: 2021-08-31 11:50:24
-LastEditTime: 2021-08-31 11:55:44
+LastEditTime: 2021-08-31 12:00:56
 LastEditors: Please set LastEditors
 '''
-# 前序遍历 + 回溯记录路径
-# 时间复杂度O（n） 空间复杂度 最坏O（n） 平衡二叉树 O（logn）
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
+
+# 前序遍历 + 回溯记录路径
+# 时间复杂度O（n） 空间复杂度 最坏O（n） 平衡二叉树 O（logn）
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         paths = []
@@ -56,3 +57,5 @@ class Solution:
             return left
         elif right != None:
             return right
+
+# 哈希存储父节点
