@@ -13,7 +13,6 @@ class Solution:
                 if i in temp:
                     continue
                 temp.append(i)
-                # print(temp)
                 if len(temp) == len(nums):
                     answer.append(temp[:])
                     temp.pop()

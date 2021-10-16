@@ -19,7 +19,9 @@ class Solution:
         def travel(node):
             if node == None:
                 return None
+
             travel(node.left)
+
             nonlocal first,last
             # 将目前最后一个节点与当前节点建立连接
             if last:
@@ -30,6 +32,7 @@ class Solution:
                 first = node
             # 不断更新最后一个节点
             last = node
+            
             travel(node.right)
 
         if not root:
