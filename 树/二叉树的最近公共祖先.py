@@ -2,7 +2,7 @@
 Description: 
 Author: Tjg
 Date: 2021-08-31 11:50:24
-LastEditTime: 2021-08-31 12:00:56
+LastEditTime: 2021-10-18 17:32:17
 LastEditors: Please set LastEditors
 '''
 class TreeNode:
@@ -29,6 +29,7 @@ class Solution:
                 path.pop()
         travel(root)
         print(paths)
+        
         i = 0
         while i < len(paths[0]) and i < len(paths[1]):
             if paths[0][i] != paths[1][i]:
