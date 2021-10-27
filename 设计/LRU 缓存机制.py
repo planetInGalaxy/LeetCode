@@ -2,7 +2,7 @@
 Description: 
 Author: Tjg
 Date: 2021-07-18 11:51:59
-LastEditTime: 2021-07-18 15:24:10
+LastEditTime: 2021-10-22 16:07:53
 LastEditors: Please set LastEditors
 '''
 
@@ -95,7 +95,7 @@ class LRUCache:
         self.addRecently(key, value)  # 是value 不是val
 
 # 自带的双端队列（双向链表）结构 慢 
-# sizem存储不存储没太大必要 运行速度都慢 可以用len(self.map)替代
+# size存储不存储没太大必要 运行速度都慢 可以用len(self.map)替代
 from collections import deque
 class LRUCache:
 

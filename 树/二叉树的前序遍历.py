@@ -2,7 +2,7 @@
 Description: 
 Author: Tjg
 Date: 2021-06-16 16:51:46
-LastEditTime: 2021-07-17 20:55:35
+LastEditTime: 2021-10-23 18:00:26
 LastEditors: Please set LastEditors
 '''
 # Definition for a binary tree node.
@@ -82,7 +82,7 @@ class Solution:
         if root == None:
             return []
         answer = []
-        stack = [root,]
+        stack = [root]
         while stack:
             node = stack.pop()
             answer.append(node.val)
