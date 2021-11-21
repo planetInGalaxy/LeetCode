@@ -2,7 +2,7 @@
 Description: 
 Author: Tjg
 Date: 2021-10-16 11:23:52
-LastEditTime: 2021-10-16 11:59:45
+LastEditTime: 2021-11-16 16:28:07
 LastEditors: Please set LastEditors
 '''
 # 剑指offer第二种思路 p242
@@ -31,7 +31,7 @@ class Solution:
                 index3 += 1
             if uglyNumber[index5] * 5 == minNumber:
                 index5 += 1
-        #     print(uglyNumber, index2, index3, index5)
+        # print(uglyNumber, index2, index3, index5)
         # print(uglyNumber)
         return uglyNumber[-1]
 

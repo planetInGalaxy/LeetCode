@@ -2,7 +2,7 @@
 Description: 
 Author: Tjg
 Date: 2021-07-18 11:51:59
-LastEditTime: 2021-10-22 16:07:53
+LastEditTime: 2021-11-15 15:46:23
 LastEditors: Please set LastEditors
 '''
 
@@ -94,11 +94,16 @@ class LRUCache:
 
         self.addRecently(key, value)  # 是value 不是val
 
-# 自带的双端队列（双向链表）结构 慢 
-# size存储不存储没太大必要 运行速度都慢 可以用len(self.map)替代
+# 自带的双端队列（双向链表）结构 
+# 速度慢 因为remove方法的时间复杂度是O(n)
+# size存储不存储没太大必要 
 from collections import deque
 class LRUCache:
-
+    class Node:
+        def __init__(self, key=None, val=None) -> None:
+            self.key = key
+            self.val = val
+            
     def __init__(self, capacity: int):
         self.map = {}
         self.cache = deque(maxlen=capacity)
@@ -110,7 +115,7 @@ class LRUCache:
         self.cache.append(x)
 
     def addRecently(self, key: int, val: int):
-        x = Node(key, val)
+        x = self.Node(key, val)
         self.cache.append(x)
         self.map.update({key:x})
         self.size += 1
