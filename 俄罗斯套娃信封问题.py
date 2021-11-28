@@ -2,7 +2,7 @@
 Description: 
 Author: Tjg
 Date: 2021-07-29 15:14:46
-LastEditTime: 2021-08-29 17:01:13
+LastEditTime: 2021-11-24 09:38:01
 LastEditors: Please set LastEditors
 '''
 
@@ -10,7 +10,7 @@ LastEditors: Please set LastEditors
 class Solution:
     def maxEnvelopes(self, envelopes: list[list[int]]) -> int:
         envelopes.sort(key = lambda x:(x[0],-x[1]))
-        # print(envelopes)
+
         increase = []
         for size in envelopes:
             if not increase or size[1] > increase[-1][1]:

@@ -2,10 +2,9 @@
 Description: 
 Author: Tjg
 Date: 2021-11-23 19:39:04
-LastEditTime: 2021-11-23 19:52:41
+LastEditTime: 2021-11-24 09:39:18
 LastEditors: Please set LastEditors
 '''
-
 # 单调栈 数据复杂度O(nm) 空间复杂度O(nm)
 class Solution:
     def maximalRectangle(self, matrix: list[list[str]]) -> int:
