@@ -2,7 +2,7 @@
 Description: 
 Author: Tjg
 Date: 2021-06-09 08:19:58
-LastEditTime: 2021-06-09 12:07:22
+LastEditTime: 2022-01-22 11:42:00
 LastEditors: Please set LastEditors
 '''
 # Definition for singly-linked list.
@@ -69,6 +69,7 @@ class Solution:
         ret = cur.next
         cur.next = None
         return ret
+
 
 
 l1 = ListNode(1)
