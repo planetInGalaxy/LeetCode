@@ -1,8 +1,11 @@
 '''
 Description: 
+给定一个不含重复数字的数组nums，
+返回其所有可能的全排列。
+你可以按任意顺序返回答案。
 Author: Tjg
 Date: 2021-06-30 10:04:14
-LastEditTime: 2021-06-30 10:33:01
+LastEditTime: 2022-02-03 17:25:14
 LastEditors: Please set LastEditors
 '''
 # 回溯法 O（n x n!）

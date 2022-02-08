@@ -1,8 +1,8 @@
 '''
-Description: 连带1143 300
+Description:相关 1143 300
 Author: Tjg
 Date: 2021-07-26 11:41:50
-LastEditTime: 2021-07-26 14:11:59
+LastEditTime: 2022-02-03 16:12:09
 LastEditors: Please set LastEditors
 '''
 # 贪心+二分  1143 最长公共子序列 -> 300 最长递增子序列
