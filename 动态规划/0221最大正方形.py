@@ -1,8 +1,10 @@
 '''
 Description: 
+在一个由 '0' 和 '1' 组成的二维矩阵内，
+找到只包含 '1' 的最大正方形，并返回其面积。
 Author: Tjg
 Date: 2022-02-12 17:05:16
-LastEditTime: 2022-02-12 17:46:09
+LastEditTime: 2022-02-12 23:58:23
 LastEditors: Please set LastEditors
 '''
 # 动态规划
