@@ -1,8 +1,10 @@
 '''
 Description: 
+修改给出的类，以输出序列 "010203040506..." ，
+其中序列的长度必须为 2n 。
 Author: Tjg
 Date: 2022-02-14 22:24:50
-LastEditTime: 2022-02-14 23:18:47
+LastEditTime: 2022-02-15 18:01:43
 LastEditors: Please set LastEditors
 '''
 def printNumber(n):
@@ -33,7 +35,7 @@ class ZeroEvenOdd:
                 
     def even(self, printNumber: 'Callable[[int], None]') -> None:
         # 这里不能用True, example：n = 1
-        while self.m <= self.evenEnd:
+        while self.m <= self.evenEnd > 0:
             self.lock_notzero.acquire()
             if self.m % 2 == 0:
                 printNumber(self.m)
@@ -88,7 +90,7 @@ class ZeroEvenOdd:
                 
     def even(self, printNumber: 'Callable[[int], None]') -> None:
         # 这里不能用True, example：n = 1
-        while self.m <= self.evenEnd:
+        while self.m <= self.evenEnd > 0:
             self.lock_even.acquire()
             printNumber(self.m)
             self.lock_zero.release()
@@ -97,7 +99,6 @@ class ZeroEvenOdd:
         # print("even over")
         
     def odd(self, printNumber: 'Callable[[int], None]') -> None:
-        # 这里不能用True, example：n = 1
         while self.m <= self.oddEnd:
             self.lock_odd.acquire()
             printNumber(self.m)
@@ -107,7 +108,7 @@ class ZeroEvenOdd:
         # print("odd over")
 
 
-s1 = ZeroEvenOdd(1000)
+s1 = ZeroEvenOdd(1)
 
 threading.Thread(target=s1.even, args=(printNumber,)).start()
 
