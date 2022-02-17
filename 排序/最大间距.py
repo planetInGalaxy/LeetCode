@@ -2,7 +2,7 @@
 Description: 
 Author: Tjg
 Date: 2021-09-07 17:29:13
-LastEditTime: 2022-01-01 20:34:30
+LastEditTime: 2022-02-17 21:11:33
 LastEditors: Please set LastEditors
 '''
 # 计数排序 超时
@@ -28,31 +28,47 @@ class Solution:
 
 # 桶排序
 # 时间复杂度O(n) 空间复杂度O(n)
+class Bucket: # 自己定义一个桶
+    def __init__(self):
+        self.empty = True
+        self.max = float('-inf')
+        self.min = float('inf')
+
+    def put(self, num):
+        self.max = max(self.max, num)
+        self.min = min(self.min, num)
+        self.empty = False
+
+    def isEmpty(self):
+        return self.empty
+        
 class Solution:
     def maximumGap(self, nums: list[int]) -> int:
-        n = len(nums)
-        if n < 2:
+        if nums is None or len(nums) < 2:
             return 0
-        minVal = min(nums)
-        maxVal = max(nums)
-        d = max(1, (maxVal - minVal) // (n - 1))
-        bucketSize = (maxVal - minVal) // d + 1
-        
-        buckets = [[-1,-1] for _ in range(bucketSize)]
+
+        n = len(nums)
+        # 分成 n + 1 个桶 
+        buckets = [Bucket() for _ in range(n + 1)]  
+        min_value = min(nums)
+        max_value = max(nums)
+        # 桶涵盖的范围，前闭后开
+        diff = max_value - min_value
+        if diff == 0:
+            return 0
+        d = diff / n
+        # 放入桶中
         for num in nums:
-            idx = (num - minVal) // d 
-            if buckets[idx][0] == -1:
-                buckets[idx][0] = buckets[idx][1] = num
-            else:
-                buckets[idx][0] = min(buckets[idx][0], num)
-                buckets[idx][1] = max(buckets[idx][1], num)
-        
-        result = 0
-        prev = -1
-        for i in range(bucketSize):
-            if buckets[i][0] != -1:
-                if prev != -1:
-                    result = max(result, buckets[i][0] - buckets[prev][1])
-                prev = i
-        
-        return result
+            buckets[int((num - min_value) / d)].put(num)  
+
+        ans = 0
+        start = buckets[0].max
+        # 第一个桶和最后一个桶永远都是有数字的
+        for i in range(1, len(buckets)):  
+            if not buckets[i].isEmpty():
+                ans = max(ans, buckets[i].min - start)
+                start = buckets[i].max
+
+        return ans
+
+    
