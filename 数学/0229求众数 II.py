@@ -4,10 +4,9 @@ Description:
 找出其中所有出现超过 ⌊n/3⌋ 次的元素。
 Author: Tjg
 Date: 2022-02-03 19:43:11
-LastEditTime: 2022-02-08 23:21:14
+LastEditTime: 2022-02-19 14:17:23
 LastEditors: Please set LastEditors
 '''
-
 # 官方 摩尔投票
 # 核心思路是对拼消耗
 # 每三个不同的数可以抵消
@@ -17,15 +16,15 @@ from typing import List
 class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:
         ans = []
-        element1, element2 = 0, 0
+        element1, element2 = None, None
         vote1, vote2 = 0, 0
 
         for num in nums:
             # 如果该元素为第一个元素，则计数加1
-            if vote1 > 0 and num == element1:
+            if num == element1:
                 vote1 += 1
             # 如果该元素为第二个元素，则计数加1
-            elif vote2 > 0 and num == element2:
+            elif num == element2:
                 vote2 += 1
             # 选择第一个元素
             elif vote1 == 0:

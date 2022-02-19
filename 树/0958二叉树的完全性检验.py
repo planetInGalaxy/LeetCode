@@ -1,8 +1,9 @@
 '''
 Description: 
+给定一个二叉树的 root ，确定它是否是一个完全二叉树 。
 Author: Tjg
 Date: 2022-02-17 21:18:25
-LastEditTime: 2022-02-17 23:33:51
+LastEditTime: 2022-02-19 14:10:01
 LastEditors: Please set LastEditors
 '''
 class TreeNode:
