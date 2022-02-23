@@ -5,13 +5,9 @@ Description:
 使得 abs(nums[i] - nums[j]) <= t ，
 同时又满足 abs(i - j) <= k 。
 如果存在则返回 true，不存在返回 false。
-
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/contains-duplicate-iii
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 Author: Tjg
 Date: 2022-02-19 14:01:01
-LastEditTime: 2022-02-19 14:08:54
+LastEditTime: 2022-02-23 22:33:38
 LastEditors: Please set LastEditors
 '''
 # 桶排序
