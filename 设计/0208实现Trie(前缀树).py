@@ -1,5 +1,12 @@
 '''
 Description: 
+Author: Tjg
+Date: 2022-02-24 22:03:02
+LastEditTime: 2022-02-25 22:29:34
+LastEditors: 
+'''
+'''
+Description: 
 Trie(发音类似"try"),或者说：前缀树，是一种树形数据结构，
 用于高效地存储和检索字符串数据集中的键。
 这一数据结构有相当多的应用情景，例如自动补完和拼写检查。
@@ -30,7 +37,7 @@ class Trie:
         self.children = [None] * 26
         # 表示该节点是否是字符串的末尾
         self.isEnd = False
-    
+
     # 查找前缀
     # 从根开始查找前缀
     # 子节点存在，指针下移，查找一下一个字符
